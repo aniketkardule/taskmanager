@@ -17,7 +17,7 @@ import cookies  from "cookie-parser";
 
 app.use(
     cors({
-      origin: "http://localhost:3000",
+      origin: "https://taskmanager-mmwt.onrender.com",
       methods: ["POST", "PUT", "GET", "PATCH", "DELETE"],
       credentials: true,
     })
