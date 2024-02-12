@@ -76,6 +76,7 @@ const Signup = ({ visibility}) => {
                   if (!response.ok) {
                     newErrors.password = 'Error occured!';
                     setErrors(newErrors);
+                    throw new Error("Server Problem");
                   }
 
                   return response.json();

@@ -35,6 +35,10 @@ app.use(cookieParser());
 app.use("/users", userRouter);
 app.use("/tasks", taskRouter);
 
+app.use((req, res) => {
+  res.status(404).send({ message: ' 404 Invalid path !'});
+});
+
 
 app.listen(port,()=>{
     console.log(`App is listening on port ${port}`)
