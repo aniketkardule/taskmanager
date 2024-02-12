@@ -14,7 +14,7 @@ Hosted Backend: https://taskmanager-backend-1pvp.onrender.com
 Give command on terminal npm install
 4) Now move to (/backend) by cd backend in terminal <br>
 5) Create .env file <br>
-6)in .env file write <br>
+6)in .env file write <br> <br>
 
 PORT=8000 <br>
 URI={your mongodb uri with taskmanager database and users collection} <br>
