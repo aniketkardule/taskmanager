@@ -7,7 +7,7 @@ Hosted Application: https://taskmanager-mmwt.onrender.com/
 Hosted Backend: https://taskmanager-backend-1pvp.onrender.com
 <br><br>
 
-<h2>Project Setup: <h2>
+<h2>Project Setup: </h2>
 1)Download zip from this GitHub repository <br>
 2)Extract Zip file on computer <br>
 3)Now in root (/taskmanager) folder <br>
