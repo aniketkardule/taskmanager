@@ -56,4 +56,8 @@ this api use authentication so user to be authenticated before trying apis  <br>
 |  baseurl/users/register | post  | create new user | name: string, email : string, password: string
 |  baseurl/users/login | post  | login user | email: string, password: string
 
+<br>
+<br>
+after hitting this APIs cookie will be automatically set to browser and you can now explore task APIs.
+
 
