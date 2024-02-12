@@ -58,6 +58,6 @@ this api use authentication so user to be authenticated before trying apis  <br>
 
 <br>
 <br>
-after hitting this APIs cookie will be automatically set to browser and you can now explore task APIs.
+After hitting this APIs cookie will be automatically set to browser and you can now explore task APIs.
 
 
