@@ -25,7 +25,8 @@ const userSchema = mongoose.Schema(
             task_name:String,
             start_date:String,
             end_date:String,
-            status:String
+            status:String,
+            details:String
         }
     ]
 });

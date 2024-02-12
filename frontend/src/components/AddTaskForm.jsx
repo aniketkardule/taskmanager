@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Spinner from "./Spinner";
 import { useDispatch } from "react-redux";
 import { setuser } from "../slices/UserSlice";
 import { toast } from "react-toastify";
@@ -15,7 +14,8 @@ const AddTaskForm = ({ visible }) => {
         taskName:  '',
         startDate: '',
         endDate: '',
-        status: ''
+        status: '',
+        details: ''
     })
    
     const submitTask = (e) => {
@@ -25,13 +25,15 @@ const AddTaskForm = ({ visible }) => {
         const startDate = e.target.startDate.value;
         const endDate = e.target.endDate.value;
         const status = e.target.status.value;
+        const details = e.target.details.value;
 
         if(taskName == '' || startDate == '' || endDate =='' || status == ''){
             setErrors({
                 taskName: taskName == ''? 'Task Name should not be empty' : '',
                 startDate: startDate == '' ? 'Start Date should not be empty' : '',
                 endDate: endDate =='' ? 'End Date should not be empty' : '',
-                status: status == '' ? 'Status should not be empty' : ''
+                status: status == '' ? 'Status should not be empty' : '',
+                details: details == '' ? 'Details should not be empty': ''
             })
         }else{
             const datas = fetch(`${process.env.REACT_APP_API_URL}tasks`, {
@@ -45,7 +47,8 @@ const AddTaskForm = ({ visible }) => {
                   task_name:taskName,
                   start_date:startDate,
                   end_date:endDate,
-                  status:status
+                  status:status,
+                  details: details
                 }), 
               })
                 .then((response) => {
@@ -57,7 +60,6 @@ const AddTaskForm = ({ visible }) => {
                 .then((data) => {
                   
                   dispatch(setuser(data));
-                  console.log(data)
                   visible()
                   toast.success("Task Created");
                 })
@@ -73,10 +75,10 @@ const AddTaskForm = ({ visible }) => {
     return(
             
         <div class="bg-gray-100 flex items-center justify-center h-screen fixed inset-0 flex items-center justify-center z-10 bg-gray-800 bg-opacity-50">
-            <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+            <div class="bg-white p-5 rounded-lg shadow-lg max-w-sm w-full">
                 
                 <p class="text-xl text-gray-600 mb-4">Add New Task</p>
-                <form onSubmit={ submitTask } className="space-y-6">
+                <form onSubmit={ submitTask } className="space-y-4">
                     <div>
                         <label for="taskname" className="text-base font-medium text-gray-700 block mb-2">Task Name</label>
                         <input type="text" name="taskName" className="h-9 form-input block w-full border border-gray-300 rounded-md shadow-sm pl-2" />
@@ -88,9 +90,14 @@ const AddTaskForm = ({ visible }) => {
                         <p className="text-sm text-red-400">{ errors.startDate }</p>
                     </div>
                     <div>
-                        <label for="startdate" className="text-base font-medium text-gray-700 block mb-2">Start Date</label>
-                        <input type="date" name="endDate" value={ endDate} onChange={e => setEndDate(e.target.value)} min={startDate} id="newPassword" className="h-9 form-input block w-full border border-gray-300 rounded-md shadow-sm pl-2" />
+                        <label for="startdate" className="text-base font-medium text-gray-700 block mb-2">End Date</label>
+                        <input type="date" name="endDate" value={ endDate} onChange={e => setEndDate(e.target.value)} min={startDate} className="h-9 form-input block w-full border border-gray-300 rounded-md shadow-sm pl-2" />
                         <p className="text-sm text-red-400">{ errors.endDate }</p>
+                    </div>
+                    <div>
+                        <label for="startdate" className="text-base font-medium text-gray-700 block mb-2">Details</label>
+                        <input type="textarea" name="details" className="h-9 form-input block w-full border border-gray-300 rounded-md shadow-sm pl-2" />
+                        <p className="text-sm text-red-400">{ errors.details }</p>
                     </div>
                     <div>
                         <label for="taskname" class="text-base font-medium text-gray-700 block mb-2">Status</label>

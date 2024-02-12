@@ -1,6 +1,28 @@
 import User from "../models/user.js";
 import { validationResult } from "express-validator";
 
+/*
+  There are two methods to store task ojects
+  1) make independent collections for both users and tasks
+  2) integrate tasks array in user objects
+
+  I chose second because it is easier to operate on frontend but surely we can implement first method also
+  some example of first method 
+
+  app.get('/tasks, async (req, res) => {
+       try{
+              const taskId = req.params.id;
+              const userId = req.params.userid;
+              const tasks = await tasks.find({id:id, user_id: userId});
+              if(tasks){
+                     res.status(200).json(tasks);
+              }
+       }catch (e){
+              res.status(500).json({ message: e.message});
+       }
+  })
+*/
+
 // function to create new task
 const createTask = async (req,res) => {
     try {
@@ -11,7 +33,7 @@ const createTask = async (req,res) => {
                 return res.status(400).json({ errors: errors.array() });
         }
 
-           const { task_name, start_date, end_date, status } = req.body;
+           const { task_name, start_date, end_date, status, details } = req.body;
            const user = await User.findById(req.user._id);
            if(user){
                   user.tasks.unshift({
@@ -19,7 +41,8 @@ const createTask = async (req,res) => {
                          task_name,
                          start_date,
                          end_date,
-                         status
+                         status,
+                         details
                   });
 
                   const updatedUser = await user.save();
@@ -51,7 +74,8 @@ const updateTask = async (req, res) => {
                          task_name:task_name || tasks[foundIndex].task_name,
                          start_date:start_date || tasks[foundIndex].start_date,
                          end_date:end_date || tasks[foundIndex].end_date,
-                         status:status || tasks[foundIndex].status
+                         status:status || tasks[foundIndex].status,
+                         details: details || tasks[foundIndex].details
                   }
                   const updatedTask = await user.save();
 
