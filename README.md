@@ -1,9 +1,9 @@
 <h1>Task Manager Application</h1>
-features: <br>
+<h2> Features: </h2>
 backend: Express, Authentication, Middlewares, Validators, JWT, Cookies <br>
 frontend: React, Tailwind CSS, Toastify, React-redux, State Management
 <br><br>
-Hosted Application: https://taskmanager-mmwt.onrender.com/
+Hosted Application: https://taskmanager-mmwt.onrender.com/  <br>
 Hosted Backend: https://taskmanager-backend-1pvp.onrender.com
 <br><br>
 
@@ -36,7 +36,7 @@ Your project will:automatically start on localhost
 <br>
 <br>
 
-<h2> APIs <h2/>
+<h2> APIs </h2/h2>
 
 | API           | Method        | Usage         | Body          |
 | ------------- | ------------- | ------------- | ------------- |
