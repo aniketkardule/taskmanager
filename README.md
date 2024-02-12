@@ -41,8 +41,8 @@ Your project will:automatically start on localhost
 | API           | Method        | Usage         | Body          |
 | ------------- | ------------- | ------------- | ------------- |
 |  baseurl/tasks | post  | create new task | task_name: string, start_date : date, end_date : date, status : string, details : string
-|  baseurl/tasks/:id | put  | update task | id: number
-|  baseurl/tasks/:id | delete  | delete task | id : number
+|  baseurl/tasks/:id | put  | update task | {id: number (params)}, task_name: string, start_date : date, end_date : date, status : string, details : string 
+|  baseurl/tasks/:id | delete  | delete task | {id : number (param) }
 
 
 hosted backend api (baseurl) : https://taskmanager-backend-1pvp.onrender.com <br>
