@@ -35,9 +35,6 @@ app.use(cookieParser());
 app.use("/users", userRouter);
 app.use("/tasks", taskRouter);
 
-app.get('*', function (req, res) { 
-  res.send({message: "404 Unauthorized path !"}); 
-}) 
 
 app.listen(port,()=>{
     console.log(`App is listening on port ${port}`)
