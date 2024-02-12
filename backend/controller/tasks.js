@@ -63,7 +63,7 @@ const updateTask = async (req, res) => {
                 return res.status(400).json({ errors: errors.array() });
         }
 
-           const { task_name, start_date, end_date, status } = req.body;
+           const { task_name, start_date, end_date, status, details } = req.body;
            const user = await User.findById(req.user._id);
            const taskid = parseInt(req.params.id);
            if(user){
