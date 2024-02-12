@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../slices/authentication";
+import { FaSpinner } from 'react-icons/fa';
 import { setuser } from "../slices/UserSlice";
 import { toast } from "react-toastify";
 
 const Login = ({ visibility }) => {
 
   const dispatch = useDispatch();
+
+  const [isWaiting, setIsWaiting] = useState(false);
   
   //error generator
   const [errors, setErrors] = useState({
@@ -18,6 +21,7 @@ const Login = ({ visibility }) => {
   //login user
   const handleSubmit = (e) => {
     e.preventDefault();
+  
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -28,6 +32,8 @@ const Login = ({ visibility }) => {
       })
       
     }else{
+
+      setIsWaiting(true);
 
       setErrors({
         email: '',
@@ -55,6 +61,7 @@ const Login = ({ visibility }) => {
                   dispatch(setuser(data));
                   dispatch(login(data));
                   toast.success("Login Successful!");
+                  setIsWaiting(false);
                   
                 })
                 .catch((error) => {
@@ -93,7 +100,9 @@ const Login = ({ visibility }) => {
               name="submit"
               type="submit"
             >
-              Login
+              {
+                isWaiting ? <FaSpinner /> : 'Login'
+              }
             </button>
           </div>
         </form>

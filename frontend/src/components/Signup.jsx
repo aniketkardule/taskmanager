@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSpinner } from 'react-icons/fa';
 import { useDispatch } from "react-redux";
 import { login } from "../slices/authentication";
 import { setuser } from "../slices/UserSlice";
@@ -8,7 +9,7 @@ import { toast } from "react-toastify";
 const Signup = ({ visibility}) => {
 
   const dispatch = useDispatch();
-
+  const [isWaiting, setIsWaiting] = useState(false);
 
   //generate errors
   const [errors, setErrors] = useState({
@@ -39,6 +40,8 @@ const Signup = ({ visibility}) => {
       })
 
     }else{
+      setIsWaiting(true);
+
       setErrors({
         name:'',
         email:'',
@@ -75,6 +78,7 @@ const Signup = ({ visibility}) => {
                   dispatch(setuser(data));
                   dispatch(login(data));
                   toast.success("Signup Successful!");
+                  setIsWaiting(false);
                 })
                 .catch((error) => {
                   console.error('Error:', error);
@@ -131,7 +135,9 @@ const Signup = ({ visibility}) => {
               className="mt-4 bg-teal-500 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider float-left"
               type="submit"
             >
-              Signup
+              {
+                isWaiting ? <FaSpinner /> : "Signup"
+              }
             </button>
           </div>
         </form>
