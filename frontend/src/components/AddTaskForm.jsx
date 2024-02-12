@@ -7,9 +7,11 @@ const AddTaskForm = ({ visible }) => {
 
     const dispatch = useDispatch();
 
+    //state managemet
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
+    //generate errors
     const [ errors, setErrors ] = useState({
         taskName:  '',
         startDate: '',
@@ -18,6 +20,7 @@ const AddTaskForm = ({ visible }) => {
         details: ''
     })
    
+    //create new task
     const submitTask = (e) => {
         e.preventDefault();
 

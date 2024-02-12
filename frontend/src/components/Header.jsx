@@ -15,10 +15,13 @@ import { toast } from "react-toastify";
   
 const Header = () => {
 
+  //state management
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userInfo } = useSelector(state => state.auth);
 
+
+  //logout user
   const handleSignout = () => {
         dispatch(logout());
         const datas = fetch(`${process.env.REACT_APP_API_URL}users/logout` , {

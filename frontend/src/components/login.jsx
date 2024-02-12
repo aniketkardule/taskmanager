@@ -8,11 +8,14 @@ const Login = ({ visibility }) => {
 
   const dispatch = useDispatch();
   
+  //error generator
   const [errors, setErrors] = useState({
     email : '',
     password : ''
   });
 
+
+  //login user
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;

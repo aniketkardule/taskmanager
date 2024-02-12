@@ -9,6 +9,8 @@ const Signup = ({ visibility}) => {
 
   const dispatch = useDispatch();
 
+
+  //generate errors
   const [errors, setErrors] = useState({
     name:'',
     email:'',
@@ -16,6 +18,8 @@ const Signup = ({ visibility}) => {
     confirmPassword:''
   })
 
+
+  //signup user
   const handleSignup = (e) =>{
 
     e.preventDefault();

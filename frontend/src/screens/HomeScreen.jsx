@@ -13,6 +13,7 @@ const imgStyle = {
         };
 const HomeScreen = () => {
 
+  //check user logged in
   const { userInfo } = useSelector(state => state.auth);
 
   const [signin, setSignin] = useState(true);

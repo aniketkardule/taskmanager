@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AddTaskForm from "../components/AddTaskForm";
 import TaskTable from "../components/TaskTable";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const TaskScreen = () => {
 

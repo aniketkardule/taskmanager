@@ -4,8 +4,8 @@ import { setuser } from "../slices/UserSlice";
 import { toast } from "react-toastify";
 
 const UpdateTask = ({ visibility, data }) => {
-    const [initialData, updateInitialData] = useState(data);
 
+    //records values
     const [startDate, setStartDate] = useState(data.start_date);
     const [endDate, setEndDate] = useState(data.end_date);
     const [taskName, setTaskName] = useState(data.task_name);
@@ -97,7 +97,7 @@ const UpdateTask = ({ visibility, data }) => {
                         {/* <p className="text-sm text-red-400">{ errors.endDate }</p> */}
                     </div>
                     <div>
-                        <label for="details" className="text-base font-medium text-gray-700 block mb-2">End Date</label>
+                        <label for="details" className="text-base font-medium text-gray-700 block mb-2">Details</label>
                         <input type="textarea" value={ details } onChange={ (e) => setDetails(e.target.value)} name="details" className="h-9 form-input block w-full border border-gray-300 rounded-md shadow-sm pl-2" />
                         {/* <p className="text-sm text-red-400">{ errors.endDate }</p> */}
                     </div>

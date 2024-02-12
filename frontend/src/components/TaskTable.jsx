@@ -9,6 +9,7 @@ const TaskTable = ({ filter, tasks }) => {
 
     const dispatch = useDispatch();
 
+    //state management
     const [updateTask, setUpdateTask] = useState(false);
     const [detailsData, setDetailsData] = useState({
         task_name: '',
@@ -16,6 +17,7 @@ const TaskTable = ({ filter, tasks }) => {
         end_date: '',
         status: ''
     })
+    
     const [showDitailsVisibility, setShowDetailsVisibility] = useState(false);
     const [updateData, setupdateData] = useState({
         task_name: '',
