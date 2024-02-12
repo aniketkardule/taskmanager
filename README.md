@@ -16,7 +16,7 @@ Give command on terminal npm install
 5) Create .env file <br>
 6)in .env file write <br>
 
-PORT=8000
+PORT=8000 <br>
 URI={your mongodb uri with taskmanager database and users collection} <br>
 JWT_SECRET={Random string}
  <br>
@@ -25,7 +25,7 @@ JWT_SECRET={Random string}
 
 8)Now move to frontend (/frontend) folder and run npm install <br>
 9) create .env file in frontend and edit it like <br> <br>
-
+<br>
 REACT_APP_API_URL=http://localhost:8000/
 <br><br>
 10) Now in frontend folder run command npm start on terminal <br>
