@@ -31,8 +31,12 @@ REACT_APP_API_URL=http://localhost:8000/
 10) Now in frontend folder run command npm start on terminal <br>
 
 Your project will:automatically start on localhost
+<br>
+<br>
+<br>
+<br>
 
-APIs
+<h2> APIs <h2/>
 
 | API           | Method        | Usage         | Body          |
 | ------------- | ------------- | ------------- | ------------- |
@@ -45,7 +49,7 @@ hosted backend api (baseurl) : https://taskmanager-backend-1pvp.onrender.com <br
 <br>
 this api use authentication so user to be authenticated before trying apis  <br> <br>
 
-for authentication first use APIs <br> <br>
+<h2> for authentication first use APIs </h2> <br> <br>
 | API           | Method        | Usage         | Body          |
 | ------------- | ------------- | ------------- | ------------- |
 |  baseurl/users/register | post  | create new user | name: string, email : string, password: string
