@@ -65,11 +65,17 @@ const Signup = ({ visibility}) => {
               })
                 .then((response) => {
                   
-                  response.status == 403 ? newErrors.email = 'User with email id already exists' : newErrors.email = '';
-                  setErrors(newErrors);
+                  if(response.status == 403){
+                    newErrors.email = 'User with email id already exists'
+                  }else{
+                    newErrors.email = ''
+                  }
 
+                  setErrors(newErrors);
+                  
                   if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    newErrors.password = 'Error occured!';
+                    setErrors(newErrors);
                   }
 
                   return response.json();

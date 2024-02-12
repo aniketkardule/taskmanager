@@ -81,10 +81,10 @@ const AddTaskForm = ({ visible }) => {
 
     return(
             
-        <div class="bg-gray-100 flex items-center justify-center h-screen fixed inset-0 flex items-center justify-center z-10 bg-gray-800 bg-opacity-50">
-            <div class="bg-white p-5 rounded-lg shadow-lg max-w-sm w-full">
+        <div className="bg-gray-100 flex items-center justify-center h-screen fixed inset-0 flex items-center justify-center z-10 bg-gray-800 bg-opacity-50">
+            <div className="bg-white p-5 rounded-lg shadow-lg max-w-sm w-full">
                 
-                <p class="text-xl text-gray-600 mb-4">Add New Task</p>
+                <p className="text-xl text-gray-600 mb-4">Add New Task</p>
                 <form onSubmit={ submitTask } className="space-y-4">
                     <div>
                         <label for="taskname" className="text-base font-medium text-gray-700 block mb-2">Task Name</label>
@@ -107,7 +107,7 @@ const AddTaskForm = ({ visible }) => {
                         <p className="text-sm text-red-400">{ errors.details }</p>
                     </div>
                     <div>
-                        <label for="taskname" class="text-base font-medium text-gray-700 block mb-2">Status</label>
+                        <label for="taskname" className="text-base font-medium text-gray-700 block mb-2">Status</label>
                         <select name="status" value='In Progress' className="h-9 form-input block w-full border border-gray-300 rounded-md shadow-sm pl-2" >
                             <option value='In Progress'>In Progress</option>
                             <option value='completed'>Completed</option>

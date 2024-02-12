@@ -66,22 +66,22 @@ const TaskTable = ({ filter, tasks }) => {
     }
     return(
         <>
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 light:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 light:bg-gray-700 light:text-gray-400">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 light:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 light:bg-gray-700 light:text-gray-400">
                         <tr>
                             <th>
                                 Id
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" className="px-6 py-3">
                                 Task title
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" className="px-6 py-3">
                                 Start Date
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" className="px-6 py-3">
                                 End Date
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" className="px-6 py-3">
                                 Status
                             </th>
                             <th>
@@ -98,7 +98,7 @@ const TaskTable = ({ filter, tasks }) => {
                                         <td>
                                             { task.id }
                                         </td>
-                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap light:text-white">
+                                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap light:text-white">
                                             { task.task_name }
                                         </th>
                                         <td className="px-6 py-4">
