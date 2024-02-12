@@ -16,7 +16,7 @@ const TaskScreen = () => {
 
     return(
         <>
-        <div className="tasks-container">
+        <div className="tasks-container p-2">
             
             <div class="relative overflow-x-auto my-5 w-full lg:w-1/2 md:w-3/4 mx-auto">
                 <div className="flex width-full justify-between">

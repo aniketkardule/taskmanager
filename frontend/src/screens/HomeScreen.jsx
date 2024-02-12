@@ -30,7 +30,7 @@ const HomeScreen = () => {
     (
     <>
     <section  className="h-screen" style={ imgStyle }>
-      <h1 className="mx-auto text-teal-800 pt-20 py-14 text-4xl font-bold w-fit">Welcome to TaskManager Application</h1>
+      <h1 className="mx-auto text-teal-800 p-20 py-14 text-4xl font-bold w-fit">Welcome to TaskManager Application</h1>
       <div className="bg-grey flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center mx-5 md:mx-0 md:my-0">
           <div className="md:w-1/3 max-w-sm">
             <img
