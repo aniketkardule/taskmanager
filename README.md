@@ -1,4 +1,13 @@
-Project Setup: <br>
+<h1>Task Manager Application</h1>
+features: <br>
+backend: Express, Authentication, Middlewares, Validators, JWT, Cookies <br>
+frontend: React, Tailwind CSS, Toastify, React-redux, State Management
+<br><br>
+Hosted Application: https://taskmanager-mmwt.onrender.com/
+Hosted Backend: https://taskmanager-backend-1pvp.onrender.com
+<br><br>
+
+<h2>Project Setup: <h2>
 1)Download zip from this GitHub repository <br>
 2)Extract Zip file on computer <br>
 3)Now in root (/taskmanager) folder <br>
@@ -28,4 +37,18 @@ APIs
 | API           | Method        | Usage         | Body          |
 | ------------- | ------------- | ------------- | ------------- |
 |  baseurl/tasks | post  | create new task | task_name: string, start_date : date, end_date : date, status : string, details : string
+|  baseurl/tasks/id | put  | update task | id: number
+|  baseurl/tasks/id | delete  | delete task | id : number
+
+
+hosted backend api (baseurl) : https://taskmanager-backend-1pvp.onrender.com <br>
+<br>
+this api use authentication so user to be authenticated before trying apis  <br> <br>
+
+for authentication first use APIs <br> <br>
+| API           | Method        | Usage         | Body          |
+| ------------- | ------------- | ------------- | ------------- |
+|  baseurl/users/register | post  | create new user | name: string, email : string, password: string
+|  baseurl/users/login | post  | login user | email: string, password: string
+
 
