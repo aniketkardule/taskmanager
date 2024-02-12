@@ -8,7 +8,7 @@ Give command on terminal npm install
 6)in .env file write <br>
 
 PORT=8000
-URI={your mongodb uri with taskmanager database and users collection}
+URI={your mongodb uri with taskmanager database and users collection} <br>
 JWT_SECRET={Random string}
  <br>
  <br>
@@ -24,3 +24,8 @@ REACT_APP_API_URL=http://localhost:8000/
 Your project will:automatically start on localhost
 
 APIs
+
+| API           | Method        | Usage         | Body          |
+| ------------- | ------------- | ------------- | ------------- |
+|  baseurl/tasks | post  | create new task | task_name: string, start_date : date, end_date : date, status : string, details : string
+
