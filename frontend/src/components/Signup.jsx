@@ -142,7 +142,7 @@ const Signup = ({ visibility}) => {
               type="submit"
             >
               {
-                isWaiting ? <FaSpinner /> : "Signup"
+                isWaiting ? <FaSpinner className="spinner" /> : "Signup"
               }
             </button>
           </div>

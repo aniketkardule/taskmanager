@@ -14,6 +14,19 @@ code {
 *{
   font-family: 'Nunito', sans-serif;
 }
+.spinner{
+    animation: spin 1s infinite linear;
+    height:18px;
+    width:18px
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 @tailwind base;
 @tailwind components;

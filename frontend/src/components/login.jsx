@@ -96,12 +96,12 @@ const Login = ({ visibility }) => {
           </div>
           <div className="text-center md:text-left">
             <button
-              className="mt-4 bg-teal-500 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider float-left"
+              className="mt-4 bg-teal-500 hover:bg-teal-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider float-left"
               name="submit"
               type="submit"
             >
               {
-                isWaiting ? <FaSpinner /> : 'Login'
+                isWaiting ? <FaSpinner className="spinner" /> : 'Login'
               }
             </button>
           </div>

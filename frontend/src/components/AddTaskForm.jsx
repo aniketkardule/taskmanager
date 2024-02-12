@@ -118,7 +118,7 @@ const AddTaskForm = ({ visible }) => {
                     </div>
                     <div className="flex justify-between">
                         <button type="button" onClick={ visible } variant="secondary" className="px-4 bg-gray-200 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-grey-500 focus:outline-none focus:ring focus:border-blue-300">Close</button>
-                        <button type="submit" variant="primary" className="px-4 bg-teal-500 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-teal-300 focus:outline-none focus:ring focus:border-blue-300"> { isWaiting ? <FaSpinner /> : 'Submit' }</button>
+                        <button type="submit" variant="primary" className="px-4 bg-teal-500 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-teal-300 focus:outline-none focus:ring focus:border-blue-300"> { isWaiting ? <FaSpinner className="spinner" /> : 'Submit' }</button>
                     </div>
                 </form>
             </div>  
