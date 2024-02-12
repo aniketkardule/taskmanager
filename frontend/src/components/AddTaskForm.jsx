@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaSpinner } from 'react-icons/fa';
 import { useDispatch } from "react-redux";
 import { setuser } from "../slices/UserSlice";
 import { toast } from "react-toastify";
@@ -6,6 +7,7 @@ import { toast } from "react-toastify";
 const AddTaskForm = ({ visible }) => {
 
     const dispatch = useDispatch();
+    const [isWaiting, setIsWaiting] = useState(false);
 
     //state managemet
     const [startDate, setStartDate] = useState('');
@@ -39,6 +41,7 @@ const AddTaskForm = ({ visible }) => {
                 details: details == '' ? 'Details should not be empty': ''
             })
         }else{
+            setIsWaiting(true);
             const datas = fetch(`${process.env.REACT_APP_API_URL}tasks`, {
                 method: 'POST',
                 credentials: 'include',
@@ -65,6 +68,7 @@ const AddTaskForm = ({ visible }) => {
                   dispatch(setuser(data));
                   visible()
                   toast.success("Task Created");
+                  setIsWaiting(false);
                 })
                 .catch((error) => {
                   console.error('Error:', error);
@@ -114,7 +118,7 @@ const AddTaskForm = ({ visible }) => {
                     </div>
                     <div className="flex justify-between">
                         <button type="button" onClick={ visible } variant="secondary" className="px-4 bg-gray-200 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-grey-500 focus:outline-none focus:ring focus:border-blue-300">Close</button>
-                        <button type="submit" variant="primary" className="px-4 bg-teal-500 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-teal-300 focus:outline-none focus:ring focus:border-blue-300"> Submit</button>
+                        <button type="submit" variant="primary" className="px-4 bg-teal-500 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-teal-300 focus:outline-none focus:ring focus:border-blue-300"> { isWaiting ? <FaSpinner /> : 'Submit' }</button>
                     </div>
                 </form>
             </div>  

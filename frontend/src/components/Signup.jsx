@@ -40,7 +40,6 @@ const Signup = ({ visibility}) => {
       })
 
     }else{
-      setIsWaiting(true);
 
       setErrors({
         name:'',
@@ -52,6 +51,7 @@ const Signup = ({ visibility}) => {
 
     const newErrors = {...errors};
     if(password == confirmPassword ){
+      setIsWaiting(true);
       newErrors.confirmPassword = '';
       setErrors(newErrors);
 
@@ -68,7 +68,7 @@ const Signup = ({ visibility}) => {
                   response.status == 403 ? newErrors.email = 'User with email id already exists' : newErrors.email = '';
                   setErrors(newErrors);
 
-                  if (!response.ok || response.status == 403) {
+                  if (!response.ok) {
                     throw new Error('Network response was not ok');
                   }
 
@@ -132,7 +132,7 @@ const Signup = ({ visibility}) => {
           </div>
           <div className="text-center md:text-left">
             <button
-              className="mt-4 bg-teal-500 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider float-left"
+              className="mt-4 bg-teal-500 hover:bg-teal-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider float-left"
               type="submit"
             >
               {

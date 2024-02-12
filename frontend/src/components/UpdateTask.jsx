@@ -1,4 +1,5 @@
 import React , { useState } from "react";
+import { FaSpinner } from 'react-icons/fa';
 import { useDispatch } from "react-redux";
 import { setuser } from "../slices/UserSlice";
 import { toast } from "react-toastify";
@@ -13,6 +14,7 @@ const UpdateTask = ({ visibility, data }) => {
     const [details, setDetails] = useState(data.details)
 
     const dispatch = useDispatch();
+    const [isWaiting, setIsWaiting] = useState(false);
 
     const [ errors, setErrors ] = useState({
         taskName:  '',
@@ -41,6 +43,7 @@ const UpdateTask = ({ visibility, data }) => {
                 details: details == '' ? 'Details should not be empty' : ''
             })
         }else{
+            setIsWaiting(true);
             const datas = fetch(`${process.env.REACT_APP_API_URL}tasks/${ data.id }`, {
                 method: 'PUT',
                 credentials: 'include',
@@ -68,6 +71,7 @@ const UpdateTask = ({ visibility, data }) => {
                   dispatch(setuser(data));
                   visibility();
                   toast.success("Task updated successfully !");
+                  setIsWaiting(false);
                 })
                 .catch((e) => {
                   console.error('Error:', e);
@@ -113,7 +117,7 @@ const UpdateTask = ({ visibility, data }) => {
                     </div>
                     <div className="flex justify-between">
                         <button onClick={ visibility} type="button" variant="secondary" className="px-4 bg-gray-200 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-grey-500 focus:outline-none focus:ring focus:border-blue-300">Close</button>
-                        <button type="submit" variant="primary" className="px-4 bg-teal-500 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-teal-300 focus:outline-none focus:ring focus:border-blue-300">Submit</button>
+                        <button type="submit" variant="primary" className="px-4 bg-teal-500 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-teal-300 focus:outline-none focus:ring focus:border-blue-300">{ isWaiting ? <FaSpinner /> : 'Submit' }</button>
                     </div>
                 </form>
             </div>  
