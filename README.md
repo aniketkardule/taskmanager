@@ -33,7 +33,7 @@ REACT_APP_API_URL=http://localhost:8000/
 Your project will:automatically start on localhost
 <br>
 <br>
-Note: If you are are unable to create tasks on local setup just replace ( sameSite: 'none' ) to ( sameSite: 'strict' ) in backened/utils/generatetoken.js and try to login again.
+Note: If you are are unable to create tasks on local setup just replace ( sameSite: 'none' ) to ( sameSite: 'strict' ) in backend/utils/generatetoken.js and try to login again.
 <br>
 <br>
 <br>
