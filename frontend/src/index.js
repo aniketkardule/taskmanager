@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import HomeScreen from './screens/HomeScreen';
 import TaskScreen from './screens/TaskScreen';
+import NotFoundPage from './components/NotFoundPage';
 import Profile from './screens/Profile';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -18,8 +19,8 @@ import store from './store';
 const router =  createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App/>}>
      <Route path='/' element={<HomeScreen /> }/> 
-     <Route path='/tasks' element ={ <TaskScreen /> } />
      <Route path='/profile' element= { <Profile /> } />
+     <Route path='*' element={ <NotFoundPage/> } />
   </Route>
 ))
 
