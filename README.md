@@ -28,9 +28,12 @@ JWT_SECRET={Random string}
 <br>
 REACT_APP_API_URL=http://localhost:8000/
 <br><br>
-10) Now in frontend folder run command npm start on terminal <br>
+10) Now in frontend folder run command npm start on terminal <br> 
 
 Your project will:automatically start on localhost
+<br>
+<br>
+Note: If you are are unable to create tasks on local setup just replace ( sameSite: 'none' ) to ( sameSite: 'strict' ) in backened/utils/generatetoken.js and try to login again.
 <br>
 <br>
 <br>
@@ -58,6 +61,7 @@ this api use authentication so user to be authenticated before trying apis  <br>
 
 <br>
 <br>
-After hitting this APIs cookie will be automatically set to browser and you can now explore task APIs.
+After hitting this APIs cookie will be automatically set to browser and you can now explore task APIs. <br> <br> 
+
 
 
